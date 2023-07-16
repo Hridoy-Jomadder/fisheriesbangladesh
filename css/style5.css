@@ -1,0 +1,7 @@
+#poop {
+    text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff, 0 0;
+     font-style: bold;
+     font-size:1em;
+     font-weight:small; 
+     color: #ffffff;
+}
