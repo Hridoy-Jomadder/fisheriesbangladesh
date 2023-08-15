@@ -11,6 +11,7 @@
 মালয়েশিয়া
 নেপাল
 ভুটান
+আফগানিস্তান
 
 ই-মেল ঠিকানা
 contacthridoyjomadder@gmail.com
