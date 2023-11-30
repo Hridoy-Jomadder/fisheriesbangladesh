@@ -184,10 +184,10 @@ function init() {
     `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
   );
 
-//   pinterestBtn.setAttribute(
-//     "href",
-//     `$email = 'mailto:?subject=' . $[post-title] . '&body=Check out this site: '. $[post-url] .'" title="Share by Email';`
-//   );
+  pinterestBtn.setAttribute(
+    "href",
+    `$email = 'mailto:?subject=' . $[post-title] . '&body=Check out this site: '. $[post-url] .'" title="Share by Email';`
+  );
 
   linkedinBtn.setAttribute(
     "href",
