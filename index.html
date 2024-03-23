@@ -1548,6 +1548,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
     </script>
+
+// Get the coordinates of the desired position on the page
+const desiredPosition = document.getElementById('yourElementId').getBoundingClientRect().top;
+
+// Scroll back to the desired position on the page
+window.scrollTo({
+  top: desiredPosition,
+  behavior: 'smooth' // Optional: adds smooth scrolling effect
+});
+
 </body>
 
 </html>
