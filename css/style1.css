@@ -98,10 +98,6 @@ body{
   cursor: pointer;
 }
 /* flip-card */
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 .flip-card {
   background-color: transparent;
@@ -142,4 +138,3 @@ body {
   color: white;
   transform: rotateY(180deg);
 }
-</style>
