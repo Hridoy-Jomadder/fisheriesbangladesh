@@ -3,3 +3,11 @@ allow:/
 
 Sitemap: https://www.fisheriesbangladesh.com/sitemap.html
 Sitemap: https://www.fisheriesbangladesh.com/sitemap.xml
+
+User-agent: AhrefsSiteAudit
+Allow: /
+
+ 
+
+User-agent: AhrefsBot
+Allow: /
