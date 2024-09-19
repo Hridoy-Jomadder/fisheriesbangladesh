@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pona Mozzuder Shutr</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="govt_logo.png" alt="Govt Logo" class="logo">
+        <h1>মৎস্য বাংলাদেশ</h1>
+        <h2>মৎস্য </h2>
+    </div>
+
+    <div class="content">
+        <h3>পোনা মজুদের সূত্র</h3>
+        
+        <div class="input-section">
+            <label for="density">আয়তন(শতাংশ):</label>
+            <input type="number" id="density" placeholder="পুকুর কত শতাংশের">
+
+            <label for="quantity">পোনা/শতাংশ:</label>
+            <input type="number" id="quantity" placeholder="শতাংশ প্রতি মোট পোনা">
+        </div>
+
+        <button id="calculateBtn">নির্ধারণ করুন</button>
+
+        <div class="results" id="results">
+            <!-- Result rows will be added here dynamically -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <button>সতর্কতা</button>
+        <button>ব্যবহারবিধি</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
