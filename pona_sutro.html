@@ -36,6 +36,37 @@
         <button>ব্যবহারবিধি</button>
 
     </div>
-    <script src="script.js"></script>
+    <script src="script.js">document.getElementById('calculateBtn').addEventListener('click', function () {
+    const density = parseInt(document.getElementById('density').value);
+    const quantity = parseInt(document.getElementById('quantity').value);
+
+    if (!density || !quantity) {
+        alert('Please enter valid inputs');
+        return;
+    }
+
+    // Calculating fish categories based on percentage
+    const categories = [
+        { name: 'কাতলা (16%)', percentage: 16 },
+        { name: 'সিলভার (14%)', percentage: 14 },
+        { name: 'রুই (30%)', percentage: 30 },
+        { name: 'মৃগেল (26%)', percentage: 26 },
+        { name: 'কালিবাউস (8%)', percentage: 8 },
+        { name: 'গ্রাসকার্প (8%)', percentage: 8 }
+    ];
+
+    let totalPona = density * quantity;
+    let resultHTML = '';
+    
+    categories.forEach(cat => {
+        let count = Math.round((cat.percentage / 100) * totalPona);
+        resultHTML += `<div class="result-item">${cat.name}: ${count}</div>`;
+    });
+
+    resultHTML += `<div class="result-item">মোট পোনা: ${totalPona}</div>`;
+
+    document.getElementById('results').innerHTML = resultHTML;
+});
+</script>
 </body>
 </html>
