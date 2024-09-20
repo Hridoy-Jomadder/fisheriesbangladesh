@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>পোনা মজুতের সূত্র</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <meta name="keywords" content="মাছ চাষ,ইলিশ,রুই,কাতলা,পাঙ্গাস,তেলাপিয়া,কৈ,শিং,মাগুর,মৃগেল,পাবদা">
+    
+    <meta name="description" content="আপনাকে মাছ চাষের তথ্য ও পরামর্শ ওয়েব সাইটে স্বাগতম । আমাদের লক্ষ্য নতুন মৎস্য চাষী তৈরী করা এবং তথ্য ও পরামর্শ প্রদান করা।">
+    
+    <meta name="author" content="Hridoy Jomadder">
+    
+    <meta http-equiv="refresh" content="60">
+     
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <link href="img/android-chrome-192x192.png" rel="icon">
+    <link href="img/android-chrome-512x512.png" rel="icon">
+    
+    <link rel="stylesheet" href="css/sutro.css">
+</head>
+<body>
+    <div class="header">
+        <img src="img/android-chrome-512x512.png" alt="Govt Logo" class="logo">
+        <h1>মৎস্য বাংলাদেশ</h1>
+        <h2>মাছ উৎপাদন বৃদ্ধি করি, সুখী সমৃদ্ধ দেশ গড়ি।</h2>
+    </div>
 
+     <div class="container">
+        <h1>পুকুরের চুন/সার নির্ধারণ</h1>
+
+        <label for="length">পুকুরের দৈর্ঘ্য (ফুট):</label>
+        <input type="number" id="length" placeholder="পুকুরের দৈর্ঘ্য (ফুট)" required>
+
+        <label for="width">পুকুরের প্রস্থ (ফুট):</label>
+        <input type="number" id="width" placeholder="পুকুরের প্রস্থ (ফুট)" required>
+
+        <label for="factor">পরিমাণ (গ্রাম)/শতাংশ:</label>
+        <input type="number" id="factor" placeholder="পরিমাণ (গ্রাম)/শতাংশ" required>
+
+        <button onclick="calculateFertilizer()">নির্ধারণ করুন</button>
+
+        <div class="result">
+            মোট চুন/সারের পরিমাণ (কেজি): <span id="result">0</span>
+        </div>
+    </div>
+
+
+        <div class="footer">
+        <h4>সতর্কতা</h4>
+        <table border="1">
+            <tr>
+                <th>ক্রমিক</th>
+                <th>বিষয়</th>
+                <th>বর্ণনা</th>
+            </tr>
+            <tr>
+                <td>১</td>
+                <td>আয়তন(শতাংশ)</td>
+                <td>পুকুর কত শতাংশের ?</td>
+            </tr>
+            <tr>
+                <td>২</td>
+                <td>পোনা নির্বাচন</td>
+                <td>শতাংশ প্রতি মোট পোনার সংখ্যা ২৫০-৩০০ থাকা প্রয়োজন।</td>
+            </tr>
+        </table>
+
+        <h4>ব্যবহারবিধি</h4>
+        <table border="1">
+            <tr>
+                <th>ক্রমিক</th>
+                <th>বিষয়</th>
+                <th>বর্ণনা</th>
+            </tr>
+            <tr>
+                <td>১</td>
+                <td>ফিডিং</td>
+                <td>সঠিক সময়ে খাবার দিন</td>
+            </tr>
+            <tr>
+                <td>২</td>
+                <td>পানির গুণমান</td>
+                <td>পানির মান বজায় রাখুন</td>
+            </tr>
+        </table>
+    </div>
+   <script>
+        function calculateFertilizer() {
+            const length = document.getElementById('length').value;
+            const width = document.getElementById('width').value;
+            const factor = document.getElementById('factor').value;
+
+            if (length && width && factor) {
+                // Example calculation (adjust this as per your needs):
+                // Total fertilizer = (length * width * factor) / 1000
+                const result = (length * width * factor) / 1000;
+
+                document.getElementById('result').textContent = result.toFixed(2);
+            } else {
+                alert('সব ফিল্ড পূরণ করুন!');
+            }
+        }
+    </script>
+</body>
+</html>
