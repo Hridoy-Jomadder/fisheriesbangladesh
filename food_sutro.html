@@ -33,23 +33,28 @@
 
     <div class="content">
         <h3>মাছের খাদ্য প্রয়োগের সূত্র</h3>
-        <h3>আপডেটের কাজ চলছে, অপেক্ষা করুন।ধন্যবাদ</h3>
+         <div class="container">
+        <h2>মাছের খাদ্য প্রয়োগের সূত্র</h2>
 
-<!--         <div class="input-section">
-            <label for="density">আয়তন(শতাংশ):</label>
-            <input type="number" id="density" placeholder="আয়তন লিখুন">
+        <label for="fishCount">মাছের সংখ্যা:</label>
+        <input type="number" id="fishCount" value="20000" />
 
-            <label for="quantity">পোনা/শতাংশ:</label>
-            <input type="number" id="quantity" placeholder="পোনার সংখ্যা লিখুন">
-        </div> -->
+        <label for="weightPerFish">গড় ওজন (গ্রাম):</label>
+        <input type="number" id="weightPerFish" value="50" />
 
-        <button id="calculateBtn">নির্ধারণ করুন</button>
+        <label for="feedRate">খাদ্য হার (%):</label>
+        <input type="number" id="feedRate" value="10" />
 
-        <div class="results" id="results">
-            <!-- Result rows will be added here dynamically -->
+        <button onclick="calculate()">নির্ণয় করুন</button>
+
+        <div class="result">
+            <p>খাদ্যের পরিমাণ (কেজি): <span id="foodAmount">100.0</span></p>
+            <p>মাছের মোট ওজন (কেজি): <span id="totalWeight">1000.0</span></p>
         </div>
-    </div>
 
+        <div class="share" onclick="shareResult()">শেয়ার করুন</div>
+    </div>
+        
         <div class="footer">
         <h4>সতর্কতা</h4>
         <table border="1">
@@ -89,37 +94,25 @@
             </tr>
         </table>
     </div>
-    <script>document.getElementById('calculateBtn').addEventListener('click', function () {
-    const density = parseInt(document.getElementById('density').value);
-    const quantity = parseInt(document.getElementById('quantity').value);
+    <script>
+        function calculate() {
+            var fishCount = document.getElementById("fishCount").value;
+            var weightPerFish = document.getElementById("weightPerFish").value;
+            var feedRate = document.getElementById("feedRate").value;
 
-    if (!density || !quantity) {
-        alert('Please enter valid inputs');
-        return;
-    }
+            // Calculations
+            var totalWeight = (fishCount * weightPerFish) / 1000; // in kg
+            var foodAmount = (totalWeight * feedRate) / 100; // in kg
 
-    // Calculating fish categories based on percentage
-    const categories = [
-        { name: 'কাতলা (16%)', percentage: 16 },
-        { name: 'সিলভার (14%)', percentage: 14 },
-        { name: 'রুই (30%)', percentage: 30 },
-        { name: 'মৃগেল (26%)', percentage: 26 },
-        { name: 'কালিবাউস (8%)', percentage: 8 },
-        { name: 'গ্রাসকার্প (8%)', percentage: 8 }
-    ];
+            // Display the result
+            document.getElementById("totalWeight").innerText = totalWeight.toFixed(1);
+            document.getElementById("foodAmount").innerText = foodAmount.toFixed(1);
+        }
 
-    let totalPona = density * quantity;
-    let resultHTML = '';
-    
-    categories.forEach(cat => {
-        let count = Math.round((cat.percentage / 100) * totalPona);
-        resultHTML += `<div class="result-item">${cat.name}: ${count}</div>`;
-    });
+        function shareResult() {
+            alert("শেয়ার ফাংশনটি এখনো সক্রিয় নয়!");
+        }
+    </script>
 
-    resultHTML += `<div class="result-item">মোট পোনা: ${totalPona}</div>`;
-
-    document.getElementById('results').innerHTML = resultHTML;
-});
-</script>
 </body>
 </html>
