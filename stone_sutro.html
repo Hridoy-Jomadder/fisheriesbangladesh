@@ -1,27 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>পোনা মজুতের সূত্র</title>
-    
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <meta name="keywords" content="মাছ চাষ,ইলিশ,রুই,কাতলা,পাঙ্গাস,তেলাপিয়া,কৈ,শিং,মাগুর,মৃগেল,পাবদা">
-    
     <meta name="description" content="আপনাকে মাছ চাষের তথ্য ও পরামর্শ ওয়েব সাইটে স্বাগতম । আমাদের লক্ষ্য নতুন মৎস্য চাষী তৈরী করা এবং তথ্য ও পরামর্শ প্রদান করা।">
-    
     <meta name="author" content="Hridoy Jomadder">
-    
     <meta http-equiv="refresh" content="60">
-     
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
     <link href="img/android-chrome-192x192.png" rel="icon">
     <link href="img/android-chrome-512x512.png" rel="icon">
-    
     <link rel="stylesheet" href="css/sutro.css">
 </head>
 <body>
@@ -31,7 +22,7 @@
         <h2>মাছ উৎপাদন বৃদ্ধি করি, সুখী সমৃদ্ধ দেশ গড়ি।</h2>
     </div>
 
-     <div class="container">
+    <div class="container">
         <h1>পুকুরের চুন/সার নির্ধারণ</h1>
 
         <label for="length">পুকুরের দৈর্ঘ্য (ফুট):</label>
@@ -50,8 +41,7 @@
         </div>
     </div>
 
-
-        <div class="footer">
+    <div class="footer">
         <h4>সতর্কতা</h4>
         <table border="1">
             <tr>
@@ -90,15 +80,15 @@
             </tr>
         </table>
     </div>
-   <script>
+
+    <script>
         function calculateFertilizer() {
             const length = document.getElementById('length').value;
             const width = document.getElementById('width').value;
             const factor = document.getElementById('factor').value;
 
             if (length && width && factor) {
-                // Example calculation (adjust this as per your needs):
-                // Total fertilizer = (length * width * factor) / 1000
+                // Calculation: Total fertilizer = (length * width * factor) / 1000 to convert into kg
                 const result = (length * width * factor) / 1000;
 
                 document.getElementById('result').textContent = result.toFixed(2);
