@@ -82,20 +82,21 @@
     </div>
 
     <script>
-        function calculateFertilizer() {
-            const length = document.getElementById('length').value;
-            const width = document.getElementById('width').value;
-            const factor = document.getElementById('factor').value;
+    function calculateFertilizer() {
+        const length = document.getElementById('length').value;
+        const width = document.getElementById('width').value;
+        const factor = document.getElementById('factor').value;
 
-            if (length && width && factor) {
-                // Corrected calculation formula
-                const result = (length * width * factor) / 100;
+        if (length && width && factor) {
+            // Calculation: Total fertilizer = (length * width * factor) / 1000 to convert into kg
+            const result = ((length * width) / 435.6) * (factor / 1000);
 
-                document.getElementById('result').textContent = result.toFixed(2);
-            } else {
-                alert('সব ফিল্ড পূরণ করুন!');
-            }
+            document.getElementById('result').textContent = result.toFixed(2);
+        } else {
+            alert('সব ফিল্ড পূরণ করুন!');
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
