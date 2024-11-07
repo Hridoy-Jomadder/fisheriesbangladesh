@@ -9658,8 +9658,9 @@ h6,
   align-items: flex-start;
   justify-content: flex-end;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #1e2024);
-/*   z-index: 1; */
-  z-index: 999;
+  z-index: 1;
+/*   z-index: 999; */
+  
 }
 
 @media (min-width: 768px) {
