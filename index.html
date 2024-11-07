@@ -1733,15 +1733,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 <!-- popup box -->
   <script>
-        let modelBox = document.getElementById("modelBox");
+	  window.onload = function() {
+    showPopupWithTimer();
+}
 
-        document.onmouseleave = function(){
-            modelBox.style.display = "black";
-        }
+function showPopupWithTimer() {
+    document.getElementById("modelBox").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+    setTimeout(closeModel, 5000); // ৫ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হবে
+}
 
-        function closeModel() {
-            modelBox.style.display = "none";
-        }
+function closeModel() {
+    document.getElementById("modelBox").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+
+        // let modelBox = document.getElementById("modelBox");
+
+        // document.onmouseleave = function(){
+        //     modelBox.style.display = "black";
+        // }
+
+        // function closeModel() {
+        //     modelBox.style.display = "none";
+       // }
     </script>
 
 </body>
