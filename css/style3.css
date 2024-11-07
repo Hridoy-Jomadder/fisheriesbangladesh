@@ -18,7 +18,7 @@ td {
 /*Popup Box
 ---------------------------------------------*/
 #modelBox {
-    position: sticky;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -28,6 +28,7 @@ td {
     border-radius: 5px;
     overflow: hidden;
 }
+
 
 .offer-text {
     padding: 20px 40px 40px 40px;
