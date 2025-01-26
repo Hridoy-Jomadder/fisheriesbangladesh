@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>মাছের খাদ্য প্রয়োগের সূত্র</title>
-    
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <meta name="keywords" content="মাছ চাষ,ইলিশ,রুই,কাতলা,পাঙ্গাস,তেলাপিয়া,কৈ,শিং,মাগুর,মৃগেল,পাবদা">
-    
-    <meta name="description" content="আপনাকে মাছ চাষের তথ্য ও পরামর্শ ওয়েব সাইটে স্বাগতম । আমাদের লক্ষ্য নতুন মৎস্য চাষী তৈরী করা এবং তথ্য ও পরামর্শ প্রদান করা।">
-    
+    <meta name="description" content="আপনাকে মাছ চাষের তথ্য ও পরামর্শ প্রদান করা হবে।">
     <meta name="author" content="Hridoy Jomadder">
-    
     <meta http-equiv="refresh" content="120">
-     
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-    <link href="img/android-chrome-192x192.png" rel="icon">
-    <link href="img/android-chrome-512x512.png" rel="icon">
-    
+    <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/sutro.css">
+    <style>
+        button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -35,65 +36,76 @@
         <h2>মাছের খাদ্য প্রয়োগের সূত্র</h2>
 
         <label for="fishCount">মাছের সংখ্যা:</label>
-        <input type="number" id="fishCount" value="" />
+        <input type="number" id="fishCount" min="1" placeholder="উদাহরণ: ১০০০">
 
         <label for="weightPerFish">গড় ওজন (গ্রাম):</label>
-        <input type="number" id="weightPerFish" value="" />
+        <input type="number" id="weightPerFish" min="1" placeholder="উদাহরণ: ২০০">
 
         <label for="feedRate">খাদ্য হার (%):</label>
-        <input type="number" id="feedRate" value="" />
+        <input type="number" id="feedRate" min="1" placeholder="উদাহরণ: ৫">
         <br>
-        <button onclick="calculate()" style="font-family: 'Nikosh', sans-serif;">নির্ণয় করুন</button>
+        <button onclick="calculate()">নির্ণয় করুন</button>
 
         <div class="result">
-            <p>খাদ্যের পরিমাণ (কেজি): <span id="foodAmount"></span></p>
-            <p>মাছের মোট ওজন (কেজি): <span id="totalWeight"></span></p>
+            <p>খাদ্যের পরিমাণ (কেজি): <span id="foodAmount">0</span></p>
+            <p>মাছের মোট ওজন (কেজি): <span id="totalWeight">0</span></p>
         </div>
-        <span><a href="https://www.fisheriesbangladesh.com/talapia.html">তেলাপিয়া মাছের বাণিজ্যিক চাষ</a>,
-        <a href="https://www.fisheriesbangladesh.com/pangash.html">পাঙ্গাস মাছের বাণিজ্যিক চাষ</a>,
-        <a href="https://www.fisheriesbangladesh.com/koi_shi_magur.html">কৈ,শিং ও মাগুর মাছের বাণিজ্যিক চাষ</a>,
-         <a href="https://www.fisheriesbangladesh.com/abudo_chinri.html">আবদ্ধ পদ্ধতিতে চিংড়ি বানিজ্যিক চাষ</a></span>
-    </div>
         
-<!--         <div class="footer">
-        <h4>ব্যবহারবিধি</h4>
-        <table border="1">
-            <tr>
-                <th>ক্রমিক</th>
-                <th>বিষয়</th>
-                <th>বর্ণনা</th>
-            </tr>
-            <tr>
-                <td>১</td>
-                <td>ফিডিং</td>
-                <td>সঠিক সময়ে খাবার দিন</td>
-            </tr>
-            <tr>
-                <td>২</td>
-                <td>পানির গুণমান</td>
-                <td>পানির মান বজায় রাখুন</td>
-            </tr>
-        </table>
-    </div> -->
+        <button onclick="shareResult()">শেয়ার করুন</button>
+        
+        <div class="footer">
+            <h4>ব্যবহারবিধি</h4>
+            <table border="1">
+                <tr>
+                    <th>ক্রমিক</th>
+                    <th>বিষয়</th>
+                    <th>বর্ণনা</th>
+                </tr>
+                <tr>
+                    <td>১</td>
+                    <td>ফিডিং</td>
+                    <td>সঠিক সময়ে খাবার দিন</td>
+                </tr>
+                <tr>
+                    <td>২</td>
+                    <td>পানির গুণমান</td>
+                    <td>পানির মান বজায় রাখুন</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <script>
         function calculate() {
             var fishCount = document.getElementById("fishCount").value;
             var weightPerFish = document.getElementById("weightPerFish").value;
             var feedRate = document.getElementById("feedRate").value;
 
-            // Calculations
-            var totalWeight = (fishCount * weightPerFish) / 1000; // in kg
-            var foodAmount = (totalWeight * feedRate) / 100; // in kg
+            if (fishCount && weightPerFish && feedRate) {
+                var totalWeight = (fishCount * weightPerFish) / 1000; // in kg
+                var foodAmount = (totalWeight * feedRate) / 100; // in kg
 
-            // Display the result
-            document.getElementById("totalWeight").innerText = totalWeight.toFixed(1);
-            document.getElementById("foodAmount").innerText = foodAmount.toFixed(1);
+                document.getElementById("totalWeight").innerText = totalWeight.toFixed(1);
+                document.getElementById("foodAmount").innerText = foodAmount.toFixed(1);
+            } else {
+                alert("সমস্ত তথ্য সঠিকভাবে পূরণ করুন!");
+            }
         }
 
         function shareResult() {
-            alert("শেয়ার ফাংশনটি এখনো সক্রিয় নয়!");
+            var foodAmount = document.getElementById("foodAmount").innerText;
+            var totalWeight = document.getElementById("totalWeight").innerText;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: "মাছের খাদ্য প্রয়োগের ফলাফল",
+                    text: `মাছের মোট ওজন: ${totalWeight} কেজি\nখাদ্যের পরিমাণ: ${foodAmount} কেজি`,
+                    url: window.location.href
+                }).catch(error => console.log("Error sharing:", error));
+            } else {
+                alert("আপনার ব্রাউজারে শেয়ারিং ফিচার সমর্থিত নয়!");
+            }
         }
     </script>
-
 </body>
 </html>
