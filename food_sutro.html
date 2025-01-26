@@ -85,8 +85,8 @@
                 var totalWeight = (fishCount * weightPerFish) / 1000; // in kg
                 var foodAmount = (totalWeight * feedRate) / 100; // in kg
 
-                document.getElementById("totalWeight").innerText = totalWeight.toFixed(1);
-                document.getElementById("foodAmount").innerText = foodAmount.toFixed(1);
+                document.getElementById("totalWeight").innerText = totalWeight.toFixed(0);
+                document.getElementById("foodAmount").innerText = foodAmount.toFixed(0);
             } else {
                 alert("সমস্ত তথ্য সঠিকভাবে পূরণ করুন!");
             }
