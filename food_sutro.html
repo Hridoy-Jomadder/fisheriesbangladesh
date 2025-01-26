@@ -23,6 +23,12 @@
         button:hover {
             background-color: #0056b3;
         }
+        input {
+            padding: 5px;
+            margin: 5px 0;
+            font-size: 16px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -36,23 +42,21 @@
         <h2>মাছের খাদ্য প্রয়োগের সূত্র</h2>
 
         <label for="fishCount">মাছের সংখ্যা:</label>
-        <input type="number" id="fishCount">
+        <input type="number" id="fishCount" min="1" placeholder="উদাহরণ: ১০০০" oninput="calculate()">
 
         <label for="weightPerFish">গড় ওজন (গ্রাম):</label>
-        <input type="number" id="weightPerFish">
+        <input type="number" id="weightPerFish" min="1" placeholder="উদাহরণ: ২০০" oninput="calculate()">
 
         <label for="feedRate">খাদ্য হার (%):</label>
-        <input type="number" id="feedRate">
-        <br>
-        <button onclick="calculate()">নির্ণয় করুন</button>
-
+        <input type="number" id="feedRate" min="1" placeholder="উদাহরণ: ৫" oninput="calculate()">
+        
         <div class="result">
-            <p>খাদ্যের পরিমাণ (কেজি): <span id="foodAmount">0</span></p>
             <p>মাছের মোট ওজন (কেজি): <span id="totalWeight">0</span></p>
+            <p>খাদ্যের পরিমাণ (কেজি): <span id="foodAmount">0</span></p>
         </div>
-        
+
         <button onclick="shareResult()">শেয়ার করুন</button>
-        
+
         <div class="footer">
             <h4>ব্যবহারবিধি</h4>
             <table border="1">
@@ -77,25 +81,31 @@
 
     <script>
         function calculate() {
-            var fishCount = document.getElementById("fishCount").value;
-            var weightPerFish = document.getElementById("weightPerFish").value;
-            var feedRate = document.getElementById("feedRate").value;
+            var fishCount = parseInt(document.getElementById("fishCount").value) || 0;
+            var weightPerFish = parseInt(document.getElementById("weightPerFish").value) || 0;
+            var feedRate = parseFloat(document.getElementById("feedRate").value) || 0;
 
-            if (fishCount && weightPerFish && feedRate) {
+            if (fishCount > 0 && weightPerFish > 0 && feedRate > 0) {
                 var totalWeight = (fishCount * weightPerFish) / 1000; // in kg
                 var foodAmount = (totalWeight * feedRate) / 100; // in kg
 
-                document.getElementById("totalWeight").innerText = totalWeight.toFixed(0);
-                document.getElementById("foodAmount").innerText = foodAmount.toFixed(0);
+                document.getElementById("totalWeight").innerText = totalWeight.toFixed(1);
+                document.getElementById("foodAmount").innerText = foodAmount.toFixed(1);
             } else {
-                alert("সমস্ত তথ্য সঠিকভাবে পূরণ করুন!");
+                document.getElementById("totalWeight").innerText = "0";
+                document.getElementById("foodAmount").innerText = "0";
             }
         }
 
         function shareResult() {
             var foodAmount = document.getElementById("foodAmount").innerText;
             var totalWeight = document.getElementById("totalWeight").innerText;
-            
+
+            if (foodAmount == "0" || totalWeight == "0") {
+                alert("প্রথমে সঠিক তথ্য দিয়ে হিসাব করুন!");
+                return;
+            }
+
             if (navigator.share) {
                 navigator.share({
                     title: "মাছের খাদ্য প্রয়োগের ফলাফল",
