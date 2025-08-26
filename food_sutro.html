@@ -1,99 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মাছের খাদ্য প্রয়োগের সূত্র | মৎস্য বাংলাদেশ</title>
     
-    <title>মাছের খাদ্য প্রয়োগের সূত্র</title>
+    <!-- SEO -->
+    <meta name="description" content="মাছ চাষের জন্য খাদ্য প্রয়োগের সূত্র জানুন। মাছের সংখ্যা, গড় ওজন ও খাদ্য হার অনুযায়ী প্রতিদিন কতটুকু খাবার প্রয়োজন তা সহজে হিসাব করুন।">
+    <meta name="keywords" content="মাছের খাদ্য, মাছ চাষ, তেলাপিয়া, রুই, কাতলা, পাঙ্গাস, শিং, মাগুর">
+    <meta name="robots" content="index, follow">
     
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <meta name="keywords" content="মাছ চাষ,ইলিশ,রুই,কাতলা,পাঙ্গাস,তেলাপিয়া,কৈ,শিং,মাগুর,মৃগেল,পাবদা">
-    
-    <meta name="description" content="আপনাকে মাছ চাষের তথ্য ও পরামর্শ ওয়েব সাইটে স্বাগতম । আমাদের লক্ষ্য নতুন মৎস্য চাষী তৈরী করা এবং তথ্য ও পরামর্শ প্রদান করা।">
-    
-    <meta name="author" content="Hridoy Jomadder">
-    
-    <meta http-equiv="refresh" content="120">
-     
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-    <link href="img/android-chrome-192x192.png" rel="icon">
-    <link href="img/android-chrome-512x512.png" rel="icon">
-    
+    <!-- Open Graph -->
+    <meta property="og:title" content="মাছের খাদ্য প্রয়োগের সূত্র">
+    <meta property="og:description" content="সহজ সূত্র দিয়ে মাছের খাদ্যের পরিমাণ নির্ণয় করুন।">
+    <meta property="og:image" content="img/android-chrome-512x512.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/sutro.css">
+
+    <style>
+        body {
+            font-family: 'Nikosh', sans-serif;
+            background: #f4f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            background: #00796b;
+            color: white;
+            padding: 20px;
+        }
+        .header img {
+            width: 70px;
+        }
+        .content {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        button {
+            background: #00796b;
+            color: white;
+            border: none;
+            padding: 12px;
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #004d40;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e0f7fa;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        .links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .links a {
+            color: #00796b;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
-        <img src="img/android-chrome-512x512.png" alt="Govt Logo" class="logo">
+        <img src="img/android-chrome-512x512.png" alt="Logo">
         <h1>মৎস্য বাংলাদেশ</h1>
         <h2>মাছ উৎপাদন বৃদ্ধি করি, সুখী সমৃদ্ধ দেশ গড়ি।</h2>
     </div>
 
     <div class="content">
-        <h2>মাছের খাদ্য প্রয়োগের সূত্র</h2>
+        <h2>🐟 মাছের খাদ্য প্রয়োগের সূত্র</h2>
 
         <label for="fishCount">মাছের সংখ্যা:</label>
-        <input type="number" id="fishCount" value="" />
+        <input type="number" id="fishCount" placeholder="যেমন: 1000">
 
         <label for="weightPerFish">গড় ওজন (গ্রাম):</label>
-        <input type="number" id="weightPerFish" value="" />
+        <input type="number" id="weightPerFish" placeholder="যেমন: 50">
 
         <label for="feedRate">খাদ্য হার (%):</label>
-        <input type="number" id="feedRate" value="" />
-        <br>
-        <button onclick="calculate()" style="font-family: 'Nikosh', sans-serif;">নির্ণয় করুন</button>
+        <input type="number" id="feedRate" placeholder="যেমন: 5">
+        
+        <button onclick="calculate()" aria-label="খাদ্য নির্ণয় করুন">📊 নির্ণয় করুন</button>
+        <button onclick="shareResult()">📤 শেয়ার করুন</button>
 
         <div class="result">
-            <p>খাদ্যের পরিমাণ (কেজি): <span id="foodAmount"></span></p>
-            <p>মাছের মোট ওজন (কেজি): <span id="totalWeight"></span></p>
+            <p>🐠 মাছের মোট ওজন: <span id="totalWeight"></span> কেজি</p>
+            <p>🥬 খাদ্যের পরিমাণ: <span id="foodAmount"></span> কেজি</p>
         </div>
-        <span><a href="https://www.fisheriesbangladesh.com/talapia.html">তেলাপিয়া মাছের বাণিজ্যিক চাষ</a>,
-        <a href="https://www.fisheriesbangladesh.com/pangash.html">পাঙ্গাস মাছের বাণিজ্যিক চাষ</a>,
-        <a href="https://www.fisheriesbangladesh.com/koi_shi_magur.html">কৈ,শিং ও মাগুর মাছের বাণিজ্যিক চাষ</a>,
-         <a href="https://www.fisheriesbangladesh.com/abudo_chinri.html">আবদ্ধ পদ্ধতিতে চিংড়ি বানিজ্যিক চাষ</a></span>
+
+        <div class="links">
+            আরও জানুন:
+            <a href="https://www.fisheriesbangladesh.com/talapia.html">তেলাপিয়া</a> |
+            <a href="https://www.fisheriesbangladesh.com/pangash.html">পাঙ্গাস</a> |
+            <a href="https://www.fisheriesbangladesh.com/koi_shi_magur.html">কৈ-শিং-মাগুর</a>
+        </div>
     </div>
-        
-<!--         <div class="footer">
-        <h4>ব্যবহারবিধি</h4>
-        <table border="1">
-            <tr>
-                <th>ক্রমিক</th>
-                <th>বিষয়</th>
-                <th>বর্ণনা</th>
-            </tr>
-            <tr>
-                <td>১</td>
-                <td>ফিডিং</td>
-                <td>সঠিক সময়ে খাবার দিন</td>
-            </tr>
-            <tr>
-                <td>২</td>
-                <td>পানির গুণমান</td>
-                <td>পানির মান বজায় রাখুন</td>
-            </tr>
-        </table>
-    </div> -->
+
     <script>
         function calculate() {
-            var fishCount = document.getElementById("fishCount").value;
-            var weightPerFish = document.getElementById("weightPerFish").value;
-            var feedRate = document.getElementById("feedRate").value;
+            let fishCount = document.getElementById("fishCount").value;
+            let weightPerFish = document.getElementById("weightPerFish").value;
+            let feedRate = document.getElementById("feedRate").value;
 
-            // Calculations
-            var totalWeight = (fishCount * weightPerFish) / 1000; // in kg
-            var foodAmount = (totalWeight * feedRate) / 100; // in kg
+            if(!fishCount || !weightPerFish || !feedRate){
+                alert("অনুগ্রহ করে সব ঘর পূরণ করুন");
+                return;
+            }
 
-            // Display the result
-            document.getElementById("totalWeight").innerText = totalWeight.toFixed(1);
-            document.getElementById("foodAmount").innerText = foodAmount.toFixed(1);
+            let totalWeight = (fishCount * weightPerFish) / 1000; // কেজি
+            let foodAmount = (totalWeight * feedRate) / 100; // কেজি
+
+            document.getElementById("totalWeight").innerText = totalWeight.toFixed(2);
+            document.getElementById("foodAmount").innerText = foodAmount.toFixed(2);
         }
 
         function shareResult() {
-            alert("শেয়ার ফাংশনটি এখনো সক্রিয় নয়!");
+            if (navigator.share) {
+                navigator.share({
+                    title: "মাছের খাদ্য প্রয়োগের সূত্র",
+                    text: "দেখুন কিভাবে মাছের খাদ্য সহজে হিসাব করা যায়।",
+                    url: window.location.href
+                });
+            } else {
+                alert("আপনার ব্রাউজারে শেয়ার ফাংশন সমর্থিত নয়!");
+            }
         }
     </script>
-
 </body>
 </html>
