@@ -39,9 +39,9 @@
         <button onclick="calculate()" style="font-family: 'Nikosh', sans-serif;">নির্ণয় করুন</button>
 
         <div class="result">
-            <p>🐠 মাছের মোট ওজন (কেজি): <span id="totalWeight"></span></p>
-            <p>🥬 প্রতিদিনের খাদ্যের পরিমাণ (কেজি): <span id="dailyFood"></span></p>
-            <p>📅 মাসিক খাদ্যের পরিমাণ (কেজি): <span id="monthlyFood"></span></p>
+            <p>🐠 মাছের মোট ওজন (কেজি): <span id="totalWeight"> কেজি</span></p>
+            <p>🥬 প্রতিদিনের খাদ্যের পরিমাণ (কেজি): <span id="dailyFood"> কেজি</span></p>
+            <p>📅 মাসিক খাদ্যের পরিমাণ (কেজি): <span id="monthlyFood"> কেজি</span></p>
         </div>
 
         <span>
@@ -92,9 +92,9 @@
             var monthlyFood = dailyFood * 30;
 
             // Display the result
-            document.getElementById("totalWeight").innerText = totalWeight.toFixed(2);
-            document.getElementById("dailyFood").innerText = dailyFood.toFixed(2);
-            document.getElementById("monthlyFood").innerText = monthlyFood.toFixed(2);
+            document.getElementById("totalWeight").innerText = totalWeight.toFixed();
+            document.getElementById("dailyFood").innerText = dailyFood.toFixed();
+            document.getElementById("monthlyFood").innerText = monthlyFood.toFixed();
         }
 
         function shareResult() {
