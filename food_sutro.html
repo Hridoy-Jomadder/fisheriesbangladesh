@@ -1,104 +1,106 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>মাছের খাদ্য প্রয়োগের সূত্র | মৎস্য বাংলাদেশ</title>
-    <style>
-        body {
-            font-family: 'Nikosh', sans-serif;
-            background: #f4f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            text-align: center;
-            background: #00796b;
-            color: white;
-            padding: 20px;
-        }
-        .content {
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        label { display: block; margin: 10px 0 5px; font-weight: bold; }
-        input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-        }
-        button {
-            background: #00796b;
-            color: white;
-            border: none;
-            padding: 12px;
-            margin-top: 10px;
-            width: 100%;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover { background: #004d40; }
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            background: #e0f7fa;
-            border-radius: 8px;
-            font-size: 18px;
-        }
-    </style>
+    <title>মাছের খাদ্য প্রয়োগের সূত্র</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="মাছ চাষ,ইলিশ,রুই,কাতলা,পাঙ্গাস,তেলাপিয়া,কৈ,শিং,মাগুর,মৃগেল,পাবদা">
+    <meta name="description" content="আপনাকে মাছ চাষের তথ্য ও পরামর্শ ওয়েব সাইটে স্বাগতম । আমাদের লক্ষ্য নতুন মৎস্য চাষী তৈরী করা এবং তথ্য ও পরামর্শ প্রদান করা।">
+    <meta name="author" content="Hridoy Jomadder">
+    <meta http-equiv="refresh" content="120">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <link href="img/android-chrome-192x192.png" rel="icon">
+    <link href="img/android-chrome-512x512.png" rel="icon">
+
+    <link rel="stylesheet" href="css/sutro.css">
 </head>
 <body>
     <div class="header">
+        <img src="img/android-chrome-512x512.png" alt="Govt Logo" class="logo">
         <h1>মৎস্য বাংলাদেশ</h1>
         <h2>মাছ উৎপাদন বৃদ্ধি করি, সুখী সমৃদ্ধ দেশ গড়ি।</h2>
     </div>
 
     <div class="content">
-        <h2>🐟 মাছের খাদ্য প্রয়োগের সূত্র</h2>
+        <h2>মাছের খাদ্য প্রয়োগের সূত্র</h2>
 
         <label for="fishCount">মাছের সংখ্যা:</label>
-        <input type="number" id="fishCount" placeholder="যেমন: 1000">
+        <input type="number" id="fishCount" value="" />
 
         <label for="weightPerFish">গড় ওজন (গ্রাম):</label>
-        <input type="number" id="weightPerFish" placeholder="যেমন: 50">
+        <input type="number" id="weightPerFish" value="" />
 
         <label for="feedRate">খাদ্য হার (%):</label>
-        <input type="number" id="feedRate" placeholder="যেমন: 5">
-        
-        <button onclick="calculate()">📊 নির্ণয় করুন</button>
+        <input type="number" id="feedRate" value="" />
+        <br>
+        <button onclick="calculate()" style="font-family: 'Nikosh', sans-serif;">নির্ণয় করুন</button>
 
         <div class="result">
-            <p>🐠 মাছের মোট ওজন: <span id="totalWeight"></span> কেজি</p>
-            <p>🥬 প্রতিদিনের খাদ্য: <span id="dailyFood"></span> কেজি</p>
-            <p>📅 মাসিক খাদ্য (৩০ দিন): <span id="monthlyFood"></span> কেজি</p>
+            <p>🐠 মাছের মোট ওজন (কেজি): <span id="totalWeight"></span></p>
+            <p>🥬 প্রতিদিনের খাদ্যের পরিমাণ (কেজি): <span id="dailyFood"></span></p>
+            <p>📅 মাসিক খাদ্যের পরিমাণ (কেজি): <span id="monthlyFood"></span></p>
         </div>
+
+        <span>
+            <a href="https://www.fisheriesbangladesh.com/talapia.html">তেলাপিয়া মাছের বাণিজ্যিক চাষ</a>,
+            <a href="https://www.fisheriesbangladesh.com/pangash.html">পাঙ্গাস মাছের বাণিজ্যিক চাষ</a>,
+            <a href="https://www.fisheriesbangladesh.com/koi_shi_magur.html">কৈ,শিং ও মাগুর মাছের বাণিজ্যিক চাষ</a>,
+            <a href="https://www.fisheriesbangladesh.com/abudo_chinri.html">আবদ্ধ পদ্ধতিতে চিংড়ি বানিজ্যিক চাষ</a>
+        </span>
     </div>
+
+    <!-- <div class="footer">
+        <h4>ব্যবহারবিধি</h4>
+        <table border="1">
+            <tr>
+                <th>ক্রমিক</th>
+                <th>বিষয়</th>
+                <th>বর্ণনা</th>
+            </tr>
+            <tr>
+                <td>১</td>
+                <td>ফিডিং</td>
+                <td>সঠিক সময়ে খাবার দিন</td>
+            </tr>
+            <tr>
+                <td>২</td>
+                <td>পানির গুণমান</td>
+                <td>পানির মান বজায় রাখুন</td>
+            </tr>
+        </table>
+    </div> -->
 
     <script>
         function calculate() {
-            let fishCount = document.getElementById("fishCount").value;
-            let weightPerFish = document.getElementById("weightPerFish").value;
-            let feedRate = document.getElementById("feedRate").value;
+            var fishCount = document.getElementById("fishCount").value;
+            var weightPerFish = document.getElementById("weightPerFish").value;
+            var feedRate = document.getElementById("feedRate").value;
 
             if(!fishCount || !weightPerFish || !feedRate){
                 alert("অনুগ্রহ করে সব ঘর পূরণ করুন");
                 return;
             }
 
-            let totalWeight = (fishCount * weightPerFish) / 1000; // কেজি
-            let dailyFood = (totalWeight * feedRate) / 100; // কেজি (প্রতিদিন)
-            let monthlyFood = dailyFood * 30; // মাসিক
+            // মোট ওজন
+            var totalWeight = (fishCount * weightPerFish) / 1000; // কেজি
+            // প্রতিদিনের খাদ্য
+            var dailyFood = (totalWeight * feedRate) / 100; // কেজি
+            // মাসিক খাদ্য (৩০ দিন)
+            var monthlyFood = dailyFood * 30;
 
+            // Display the result
             document.getElementById("totalWeight").innerText = totalWeight.toFixed(2);
             document.getElementById("dailyFood").innerText = dailyFood.toFixed(2);
             document.getElementById("monthlyFood").innerText = monthlyFood.toFixed(2);
         }
+
+        function shareResult() {
+            alert("শেয়ার ফাংশনটি এখনো সক্রিয় নয়!");
+        }
     </script>
+
 </body>
 </html>
