@@ -16,6 +16,9 @@
     <link href="img/android-chrome-512x512.png" rel="icon">
 
     <link rel="stylesheet" href="css/sutro.css">
+
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="header">
@@ -43,35 +46,76 @@
             <p> প্রতিদিনের খাদ্যের পরিমাণ (কেজি): <span id="dailyFood"> কেজি</span></p>
             <p> মাসিক খাদ্যের পরিমাণ (কেজি): <span id="monthlyFood"> কেজি</span></p>
         </div>
+    </div>
 
-        <span>
+<div class="container my-5">
+  <div class="card shadow-lg border-0 rounded-3">
+    <div class="card-header bg-success text-white text-center fs-4 fw-bold">
+       মাছের খাদ্য প্রয়োগ – ব্যবহার ও সতর্কতা
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle">
+          <thead class="table-success text-center">
+            <tr>
+              <th>বিষয়</th>
+              <th>ব্যবহার নির্দেশনা</th>
+              <th>সতর্কতা</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>দৈনিক খাবারের পরিমাণ</td>
+              <td>প্রতিদিন ক্যালকুলেটরে হিসাব করা পরিমাণ খাবার পুকুরে দিতে হবে।</td>
+              <td>একবারে সব খাবার না দিয়ে দিনে ২–৩ ভাগে ভাগ করে দিন।</td>
+            </tr>
+            <tr>
+              <td>মাসিক খাবারের পরিমাণ</td>
+              <td>প্রতিদিনের পরিমাণ × ৩০ দিন = মাসিক খাবারের হিসাব।</td>
+              <td>মাসিক হিসাবে শুধু অনুমান পাওয়া যায়, প্রতিদিনের ওজন অনুযায়ী পরিবর্তন হবে।</td>
+            </tr>
+            <tr>
+              <td>খাদ্যের ধরন</td>
+              <td>মাছের বয়স ও আকার অনুযায়ী ভাসমান বা ডুবন্ত ফিড ব্যবহার করুন।</td>
+              <td>নিম্নমানের বা মেয়াদোত্তীর্ণ খাদ্য ব্যবহার করবেন না।</td>
+            </tr>
+            <tr>
+              <td>খাদ্য প্রয়োগ সময়</td>
+              <td>সকালে ও বিকালে খাবার দেয়া উত্তম।</td>
+              <td>রাতে খাবার না দেওয়া ভালো।</td>
+            </tr>
+            <tr>
+              <td>পানির অবস্থা</td>
+              <td>পানির রঙ সবুজ-হালকা হলে স্বাভাবিক, অতিরিক্ত সবুজ বা কালো হলে খাবার কমাতে হবে।</td>
+              <td>অক্সিজেন কম থাকলে খাবার দিলে মাছ মরতে পারে।</td>
+            </tr>
+            <tr>
+              <td>মাছের আচরণ</td>
+              <td>মাছ সক্রিয় থাকলে খাবার স্বাভাবিক দিন।</td>
+              <td>মাছ অসুস্থ/অলস হলে খাবার বন্ধ রাখুন।</td>
+            </tr>
+            <tr>
+              <td>ওজন পরীক্ষা</td>
+              <td>মাসে অন্তত একবার ১০–২০টা মাছ ধরে ওজন মাপুন।</td>
+              <td>পুরনো ওজন ধরে খাবার দিলে খাবার অপচয় বা ঘাটতি হবে।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <span>
             <a href="https://www.fisheriesbangladesh.com/talapia.html">তেলাপিয়া মাছের বাণিজ্যিক চাষ</a>,
             <a href="https://www.fisheriesbangladesh.com/pangash.html">পাঙ্গাস মাছের বাণিজ্যিক চাষ</a>,
             <a href="https://www.fisheriesbangladesh.com/koi_shi_magur.html">কৈ,শিং ও মাগুর মাছের বাণিজ্যিক চাষ</a>,
             <a href="https://www.fisheriesbangladesh.com/abudo_chinri.html">আবদ্ধ পদ্ধতিতে চিংড়ি বানিজ্যিক চাষ</a>
         </span>
-    </div>
 
-    <!-- <div class="footer">
-        <h4>ব্যবহারবিধি</h4>
-        <table border="1">
-            <tr>
-                <th>ক্রমিক</th>
-                <th>বিষয়</th>
-                <th>বর্ণনা</th>
-            </tr>
-            <tr>
-                <td>১</td>
-                <td>ফিডিং</td>
-                <td>সঠিক সময়ে খাবার দিন</td>
-            </tr>
-            <tr>
-                <td>২</td>
-                <td>পানির গুণমান</td>
-                <td>পানির মান বজায় রাখুন</td>
-            </tr>
-        </table>
-    </div> -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <script>
         function calculate() {
