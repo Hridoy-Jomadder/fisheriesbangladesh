@@ -4,21 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>মাছের খাদ্য প্রয়োগের সূত্র | মৎস্য বাংলাদেশ</title>
-    
-    <!-- SEO -->
-    <meta name="description" content="মাছ চাষের জন্য খাদ্য প্রয়োগের সূত্র জানুন। মাছের সংখ্যা, গড় ওজন ও খাদ্য হার অনুযায়ী প্রতিদিন কতটুকু খাবার প্রয়োজন তা সহজে হিসাব করুন।">
-    <meta name="keywords" content="মাছের খাদ্য, মাছ চাষ, তেলাপিয়া, রুই, কাতলা, পাঙ্গাস, শিং, মাগুর">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="মাছের খাদ্য প্রয়োগের সূত্র">
-    <meta property="og:description" content="সহজ সূত্র দিয়ে মাছের খাদ্যের পরিমাণ নির্ণয় করুন।">
-    <meta property="og:image" content="img/android-chrome-512x512.png">
-    <meta property="og:type" content="website">
-
-    <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/sutro.css">
-
     <style>
         body {
             font-family: 'Nikosh', sans-serif;
@@ -32,9 +17,6 @@
             color: white;
             padding: 20px;
         }
-        .header img {
-            width: 70px;
-        }
         .content {
             max-width: 600px;
             margin: 20px auto;
@@ -43,11 +25,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
         input {
             width: 100%;
             padding: 8px;
@@ -65,9 +43,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-        button:hover {
-            background: #004d40;
-        }
+        button:hover { background: #004d40; }
         .result {
             margin-top: 20px;
             padding: 15px;
@@ -75,19 +51,10 @@
             border-radius: 8px;
             font-size: 18px;
         }
-        .links {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-        .links a {
-            color: #00796b;
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="img/android-chrome-512x512.png" alt="Logo">
         <h1>মৎস্য বাংলাদেশ</h1>
         <h2>মাছ উৎপাদন বৃদ্ধি করি, সুখী সমৃদ্ধ দেশ গড়ি।</h2>
     </div>
@@ -104,19 +71,12 @@
         <label for="feedRate">খাদ্য হার (%):</label>
         <input type="number" id="feedRate" placeholder="যেমন: 5">
         
-        <button onclick="calculate()" aria-label="খাদ্য নির্ণয় করুন">📊 নির্ণয় করুন</button>
-        <button onclick="shareResult()">📤 শেয়ার করুন</button>
+        <button onclick="calculate()">📊 নির্ণয় করুন</button>
 
         <div class="result">
             <p>🐠 মাছের মোট ওজন: <span id="totalWeight"></span> কেজি</p>
-            <p>🥬 খাদ্যের পরিমাণ: <span id="foodAmount"></span> কেজি</p>
-        </div>
-
-        <div class="links">
-            আরও জানুন:
-            <a href="https://www.fisheriesbangladesh.com/talapia.html">তেলাপিয়া</a> |
-            <a href="https://www.fisheriesbangladesh.com/pangash.html">পাঙ্গাস</a> |
-            <a href="https://www.fisheriesbangladesh.com/koi_shi_magur.html">কৈ-শিং-মাগুর</a>
+            <p>🥬 প্রতিদিনের খাদ্য: <span id="dailyFood"></span> কেজি</p>
+            <p>📅 মাসিক খাদ্য (৩০ দিন): <span id="monthlyFood"></span> কেজি</p>
         </div>
     </div>
 
@@ -132,22 +92,12 @@
             }
 
             let totalWeight = (fishCount * weightPerFish) / 1000; // কেজি
-            let foodAmount = (totalWeight * feedRate) / 100; // কেজি
+            let dailyFood = (totalWeight * feedRate) / 100; // কেজি (প্রতিদিন)
+            let monthlyFood = dailyFood * 30; // মাসিক
 
             document.getElementById("totalWeight").innerText = totalWeight.toFixed(2);
-            document.getElementById("foodAmount").innerText = foodAmount.toFixed(2);
-        }
-
-        function shareResult() {
-            if (navigator.share) {
-                navigator.share({
-                    title: "মাছের খাদ্য প্রয়োগের সূত্র",
-                    text: "দেখুন কিভাবে মাছের খাদ্য সহজে হিসাব করা যায়।",
-                    url: window.location.href
-                });
-            } else {
-                alert("আপনার ব্রাউজারে শেয়ার ফাংশন সমর্থিত নয়!");
-            }
+            document.getElementById("dailyFood").innerText = dailyFood.toFixed(2);
+            document.getElementById("monthlyFood").innerText = monthlyFood.toFixed(2);
         }
     </script>
 </body>
