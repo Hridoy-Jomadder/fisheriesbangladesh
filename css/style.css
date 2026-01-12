@@ -6170,7 +6170,8 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #1E2024 !important;
+  /* background-color: #1E2024 !important; */
+  background: linear-gradient(90deg, rgb(34 32 245) 0%, #00bcd4 50%, rgb(50 48 229) 100%);
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
