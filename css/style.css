@@ -9684,6 +9684,16 @@ h6,
 }
 
 
+//pdf css
+@media print {
+  nav, footer, .adsbygoogle, .back-to-top, .share-btn-container {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+}
 
 
 
