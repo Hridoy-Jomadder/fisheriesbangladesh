@@ -199,6 +199,414 @@ function showResult(str) {
                     </div>
                     <!-- News Detail End -->
 
+                  ```html
+<!-- News Detail Start -->
+<div class="position-relative mb-3 nursery-section">
+
+    <style>
+        .nursery-section {
+            font-family: inherit;
+            color: #222;
+        }
+
+        .nursery-banner {
+            background: linear-gradient(135deg, #e2f8ee, #dfffff);
+            border-left: 5px solid #138754;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .nursery-banner h3 {
+            color: #116b43;
+            font-weight: 700;
+            line-height: 1.7;
+        }
+
+        .nursery-banner p {
+            color: #333;
+            line-height: 1.9;
+            margin-bottom: 0;
+        }
+
+        .nursery-search-box {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e3e8e5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .nursery-search-box label {
+            font-weight: 600;
+            color: #116b43;
+        }
+
+        .nursery-search-box .form-control {
+            height: 46px;
+            border-radius: 5px;
+        }
+
+        .nursery-table-wrap {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            background: #fff;
+        }
+
+        .nursery-table {
+            width: 100%;
+            min-width: 850px;
+            margin-bottom: 0;
+            border-collapse: collapse;
+        }
+
+        .nursery-table thead th {
+            background: #116b43;
+            color: #fff;
+            padding: 14px 12px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #d6e5dc;
+        }
+
+        .nursery-table tbody td {
+            padding: 13px 12px;
+            vertical-align: middle;
+            border: 1px solid #dee2e6;
+            line-height: 1.8;
+        }
+
+        .nursery-table tbody tr:nth-child(even) {
+            background: #f4fbf7;
+        }
+
+        .nursery-table tbody tr:hover {
+            background: #e5f5ec;
+        }
+
+        .nursery-division {
+            color: #116b43;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nursery-notice {
+            background: #fffbea;
+            border: 1px solid #f0dfa0;
+            border-left: 5px solid #e3ad13;
+            border-radius: 8px;
+            padding: 22px;
+            margin-top: 22px;
+        }
+
+        .nursery-notice h5 {
+            color: #8a6500;
+            font-weight: 700;
+        }
+
+        .nursery-notice li {
+            margin-bottom: 10px;
+            line-height: 1.9;
+        }
+
+        .nursery-empty {
+            text-align: center;
+            padding: 22px;
+            color: #666;
+        }
+
+        @media (max-width: 767px) {
+            .nursery-banner {
+                padding: 17px;
+            }
+
+            .nursery-banner h3 {
+                font-size: 21px;
+            }
+
+            .nursery-notice {
+                padding: 16px;
+            }
+        }
+    </style>
+
+    <!-- Existing website image -->
+    <div class="d-none d-md-block mb-3">
+        <img
+            class="img-fluid w-100"
+            src="img/Men_loading_fish_fry_bags_20261010220435.jpg"
+            alt="বাংলাদেশের মাছের পোনার নার্সারি"
+            loading="lazy">
+    </div>
+
+    <!-- Introduction -->
+    <div class="nursery-banner">
+        <h3>
+            বাংলাদেশের ৮ বিভাগের নার্সারির তালিকা
+        </h3>
+
+        <p>
+            <strong>মৎস্য বাংলাদেশ — নিরাপদে মাছ চাষ করুন,
+            মানসম্মত পোনা সংগ্রহ করুন।</strong>
+        </p>
+
+        <p class="mt-2">
+            বাংলাদেশের বিভিন্ন এলাকার মাছের পোনার নার্সারি,
+            পোনার প্রাপ্যতা, আকার ও বিক্রয়মূল্য সম্পর্কে তথ্য
+            এখানে পাওয়া যাবে। মাছ চাষিরা সরাসরি নার্সারি
+            মালিকদের সঙ্গে যোগাযোগ করে প্রয়োজন অনুযায়ী
+            পোনা সংগ্রহ করতে পারবেন।
+        </p>
+    </div>
+
+    <!-- Search and Division Filter -->
+    <div class="nursery-search-box">
+        <div class="row">
+
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label for="nurserySearch">
+                    <i class="fas fa-search"></i>
+                    নার্সারি বা মাছের নাম খুঁজুন
+                </label>
+
+                <input
+                    type="search"
+                    id="nurserySearch"
+                    class="form-control"
+                    placeholder="মালিক, জেলা, মাছের নাম বা মোবাইল নম্বর...">
+            </div>
+
+            <div class="col-md-6">
+                <label for="divisionFilter">
+                    <i class="fas fa-map-marker-alt"></i>
+                    বিভাগ নির্বাচন করুন
+                </label>
+
+                <select id="divisionFilter" class="form-control">
+                    <option value="">সকল বিভাগ</option>
+                    <option value="ঢাকা">ঢাকা বিভাগ</option>
+                    <option value="চট্টগ্রাম">চট্টগ্রাম বিভাগ</option>
+                    <option value="রাজশাহী">রাজশাহী বিভাগ</option>
+                    <option value="খুলনা">খুলনা বিভাগ</option>
+                    <option value="বরিশাল">বরিশাল বিভাগ</option>
+                    <option value="সিলেট">সিলেট বিভাগ</option>
+                    <option value="রংপুর">রংপুর বিভাগ</option>
+                    <option value="ময়মনসিংহ">ময়মনসিংহ বিভাগ</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Nursery List -->
+    <h4 class="mb-3 font-weight-bold">
+        <i class="fas fa-fish text-success"></i>
+        মাছের পোনার নার্সারি তালিকা
+    </h4>
+
+    <div class="nursery-table-wrap">
+        <table class="table nursery-table" id="nurseryTable">
+
+            <thead>
+                <tr>
+                    <th>বিভাগ</th>
+                    <th>নার্সারি মালিকের নাম, ঠিকানা ও যোগাযোগ নম্বর</th>
+                    <th>পোনা মাছের নাম ও আকার</th>
+                    <th>পোনার প্রাপ্যতা</th>
+                    <th>পোনার বিক্রয়মূল্য</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- ঢাকা -->
+                <tr data-division="ঢাকা">
+                    <td class="nursery-division">ঢাকা</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Chattogram -->
+                <tr data-division="চট্টগ্রাম">
+                    <td class="nursery-division">চট্টগ্রাম</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Rajshahi -->
+                <tr data-division="রাজশাহী">
+                    <td class="nursery-division">রাজশাহী</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Khulna -->
+                <tr data-division="খুলনা">
+                    <td class="nursery-division">খুলনা</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Barishal -->
+                <tr data-division="বরিশাল">
+                    <td class="nursery-division">বরিশাল</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Sylhet -->
+                <tr data-division="সিলেট">
+                    <td class="nursery-division">সিলেট</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Rangpur -->
+                <tr data-division="রংপুর">
+                    <td class="nursery-division">রংপুর</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+                <!-- Mymensingh -->
+                <tr data-division="ময়মনসিংহ">
+                    <td class="nursery-division">ময়মনসিংহ</td>
+                    <td>নার্সারির তথ্য সংযোজন করা হবে</td>
+                    <td>তথ্য পাওয়া যায়নি</td>
+                    <td>যাচাই সাপেক্ষে</td>
+                    <td>মালিকের সঙ্গে যোগাযোগ করুন</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <div id="nurseryEmpty" class="nursery-empty" style="display:none;">
+            <i class="fas fa-search"></i>
+            আপনার অনুসন্ধানের সঙ্গে মেলে এমন কোনো তথ্য পাওয়া যায়নি।
+        </div>
+    </div>
+
+    <p class="text-muted mt-2">
+        <small>
+            <i class="fas fa-info-circle"></i>
+            উপরের বিভাগভিত্তিক সারিগুলো নমুনা। প্রকৃত নার্সারি,
+            মালিকের যোগাযোগ নম্বর, পোনার মজুত ও মূল্য যাচাই করে
+            তথ্য যোগ করুন।
+        </small>
+    </p>
+
+    <!-- Important Notice -->
+    <div class="nursery-notice">
+        <h5>
+            <i class="fas fa-exclamation-triangle"></i>
+            গুরুত্বপূর্ণ বিজ্ঞপ্তি ও লেনদেন সংক্রান্ত শর্তাবলি
+        </h5>
+
+        <ol class="mt-3 mb-0">
+
+            <li>
+                পোনা সরবরাহ ও পৌঁছানোর পর ক্রেতা ও বিক্রেতার
+                পারস্পরিক সমঝোতা অনুযায়ী মূল্য পরিশোধ করা হবে।
+            </li>
+
+            <li>
+                পোনার প্রাপ্যতা, আকার, গুণগত মান, সরবরাহ ও
+                বিক্রয়মূল্য সম্পর্কে অর্ডার দেওয়ার আগে নার্সারি
+                মালিকের সঙ্গে সরাসরি যোগাযোগ করে নিশ্চিত হয়ে নিন।
+            </li>
+
+            <li>
+                পোনা ক্রয়-বিক্রয় সংক্রান্ত মূল্য পরিশোধ,
+                সরবরাহ, মান বা অন্য কোনো বিরোধের জন্য
+                মৎস্য বাংলাদেশ দায়বদ্ধ থাকবে না। ক্রেতা ও
+                বিক্রেতার মধ্যকার লেনদেন ও চুক্তির দায়িত্ব
+                সংশ্লিষ্ট উভয় পক্ষের।
+            </li>
+
+            <li>
+                মৎস্য বাংলাদেশ ক্রেতা ও বিক্রেতার মধ্যে
+                যোগাযোগের মাধ্যম হিসেবে কাজ করে। তালিকাভুক্ত
+                তথ্য ব্যবহারের আগে প্রয়োজনীয় যাচাই করে নিন।
+            </li>
+
+        </ol>
+    </div>
+
+    <div class="text-center mt-4 mb-3">
+        <h5 class="text-success font-weight-bold">
+            মৎস্য বাংলাদেশ
+        </h5>
+
+        <p class="mb-0">
+            মাছ উৎপাদন বৃদ্ধি করি, সুখী সমৃদ্ধ দেশ গড়ি।
+        </p>
+    </div>
+
+</div>
+<!-- News Detail End -->
+
+<!-- Nursery Search Script -->
+<script>
+(function () {
+    var searchInput = document.getElementById('nurserySearch');
+    var divisionFilter = document.getElementById('divisionFilter');
+    var table = document.getElementById('nurseryTable');
+    var emptyMessage = document.getElementById('nurseryEmpty');
+
+    if (!searchInput || !divisionFilter || !table) {
+        return;
+    }
+
+    function filterNurseries() {
+        var keyword = searchInput.value.trim().toLowerCase();
+        var division = divisionFilter.value;
+        var rows = table.querySelectorAll('tbody tr');
+        var visibleCount = 0;
+
+        rows.forEach(function (row) {
+            var rowText = row.textContent.toLowerCase();
+            var rowDivision = row.getAttribute('data-division');
+
+            var matchesKeyword = rowText.indexOf(keyword) !== -1;
+            var matchesDivision =
+                division === '' || rowDivision === division;
+
+            if (matchesKeyword && matchesDivision) {
+                row.style.display = '';
+                visibleCount++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        emptyMessage.style.display =
+            visibleCount === 0 ? 'block' : 'none';
+
+        table.style.display =
+            visibleCount === 0 ? 'none' : 'table';
+    }
+
+    searchInput.addEventListener('input', filterNurseries);
+    divisionFilter.addEventListener('change', filterNurseries);
+})();
+</script>
+
+
  
                     <!-- Form Start -->
                     <div class="mb-3">
